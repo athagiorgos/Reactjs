@@ -23,18 +23,44 @@
 // // }
 
 import React from "react"
-import Header from "./components/Header"
-import MainContent from "./components/MainContent"
-import Footer from "./components/Footer"
+// import Header from "./components/Header"
+// import MainContent from "./components/MainContent"
+// import Footer from "./components/Footer"
 
 function App() {
-  return (
-    <div>
-      <Header />
-      <MainContent />
-      <Footer />
-    </div>
+  // return (
+  //   <div>
+  //     <Header />
+  //     <MainContent />
+  //     <Footer />
+  //   </div>
+  // )
+
+  const date = new Date();
+  //var hours = new date.getHours()
+  let timeOfDay
+  // Testing
+
+  const styles = {
+    fontSize: 30
+  }
+
+  if(date.getHours() < 12) {
+    timeOfDay = "Good morning"
+    styles.color = "#04756df"
+  } else if (date.getHours() < 17) {
+    timeOfDay = "Good afternoon"
+    styles.color = "#2e0927"
+  } else {
+    timeOfDay = "Good night"
+    styles.color = "#d90000"
+  }
+
+
+  return(
+    <h1 style={styles}>{timeOfDay}!</h1>
   )
+  
 }
 
 export default App
