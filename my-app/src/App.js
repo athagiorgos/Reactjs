@@ -94,22 +94,84 @@
 
 // export default App
 
-import React from "react"
-import Joke from "./components/Joke"
-import jokesData from "./jokesData"
+// import React from "react"
+// import Joke from "./components/Joke"
+// import jokesData from "./jokesData"
 
 
-function App () {
+// function App () {
 
-  const jokesComponents = 
-  jokesData.map(joke => <Joke key={joke.id} question={joke.question} answer={joke.answer} />)
+//   const jokesComponents = 
+//   jokesData.map(joke => <Joke key={joke.id} question={joke.question} answer={joke.answer} />)
 
 
-  return (
-    <div>
-      {jokesComponents}
-    </div>
-  )
+//   return (
+//     <div>
+//       {jokesComponents}
+//     </div>
+//   )
+// }
+
+// export default App
+
+
+//import React from "react"
+// import Product from "./components/Products"
+// import productsData from "./productsData"
+
+// function productComponents(props) {
+//   productsData.map(product => <Product key={product.id} product={product} />)
+// }
+
+// class App extends React.Component {
+
+//   constructor() {
+//     super()
+//     this.state = {
+//       answer: "good"
+//     }
+//   }
+
+//   // render() {
+//   //   return (
+//   //     <div>
+//   //       {productComponents}
+//   //     </div>
+//   //   )
+//   // }
+
+//   render() {
+//     return (
+//     <h1>How are you? {this.state.answer}</h1>
+//     )
+//   }
+
+// }
+
+// export default App
+
+
+import React, {Component} from "react"
+
+class App extends Component {
+  
+  constructor() {
+    super()
+    this.state = {
+      name: "Gogos",
+      age: "20"
+    }
+  }
+
+  render() {
+    return(
+      <div>
+        <h1>{this.state.name}</h1>
+        <h1>{this.state.age} years old</h1>
+      </div>
+    )
+  }
+
 }
 
 export default App
