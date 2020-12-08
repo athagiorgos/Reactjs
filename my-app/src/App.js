@@ -22,45 +22,94 @@
 // //   );
 // // }
 
-import React from "react"
+// import React from "react"
+// import TodoItem from "./components/TodoItem"
 // import Header from "./components/Header"
 // import MainContent from "./components/MainContent"
 // import Footer from "./components/Footer"
 
-function App() {
-  // return (
-  //   <div>
-  //     <Header />
-  //     <MainContent />
-  //     <Footer />
-  //   </div>
-  // )
+// function App() {
+//   // return (
+//   //   <div>
+//   //     <Header />
+//   //     <MainContent />
+//   //     <Footer />
+//   //   </div>
+//   // )
 
-  const date = new Date();
-  //var hours = new date.getHours()
-  let timeOfDay
-  // Testing
+//   const date = new Date();
+//   //var hours = new date.getHours()
+//   let timeOfDay
+//   // Testing
 
-  const styles = {
-    fontSize: 30
-  }
+//   const styles = {
+//     fontSize: 30
+//   }
 
-  if(date.getHours() < 12) {
-    timeOfDay = "Good morning"
-    styles.color = "#04756df"
-  } else if (date.getHours() < 17) {
-    timeOfDay = "Good afternoon"
-    styles.color = "#2e0927"
-  } else {
-    timeOfDay = "Good night"
-    styles.color = "#d90000"
-  }
+//   if(date.getHours() < 12) {
+//     timeOfDay = "Good morning"
+//     styles.color = "#04756df"
+//   } else if (date.getHours() < 17) {
+//     timeOfDay = "Good afternoon"
+//     styles.color = "#2e0927"
+//   } else {
+//     timeOfDay = "Good night"
+//     styles.color = "#d90000"
+//   }
 
 
-  return(
-    <h1 style={styles}>{timeOfDay}!</h1>
-  )
+//   return(
+//     <h1 style={styles}>{timeOfDay}!</h1>
+//   )
   
+// }
+
+// function App() {
+//   return (
+//     <div>
+//       <TodoItem />
+//       <TodoItem />
+//       <TodoItem />
+//       <TodoItem />
+//     </div>
+//   )
+// }
+
+// export default App
+
+// import React from "react"
+// import ContactCard from "./components/ContactCard"
+
+// function App () {
+//   return (
+//     <div>
+//       <ContactCard 
+//       content = {{name:"Mr.Kittens", 
+//       imgUrl:"http://placekitten.com/200/300",
+//       phone:"(212) 555-1234",
+//       email:"mrkittens2gmail.com"}} />
+//     </div>
+//   )
+// }
+
+// export default App
+
+import React from "react"
+import Joke from "./components/Joke"
+import jokesData from "./jokesData"
+
+
+function App () {
+
+  const jokesComponents = 
+  jokesData.map(joke => <Joke key={joke.id} question={joke.question} answer={joke.answer} />)
+
+
+  return (
+    <div>
+      {jokesComponents}
+    </div>
+  )
 }
 
 export default App
