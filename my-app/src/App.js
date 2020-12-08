@@ -115,12 +115,12 @@
 // export default App
 
 
-//import React from "react"
+// import React from "react"
 // import Product from "./components/Products"
 // import productsData from "./productsData"
 
 // function productComponents(props) {
-//   productsData.map(product => <Product key={product.id} product={product} />)
+  
 // }
 
 // class App extends React.Component {
@@ -128,21 +128,49 @@
 //   constructor() {
 //     super()
 //     this.state = {
-//       answer: "good"
+//       //answer: "good"
+//       product: productsData
 //     }
 //   }
 
-//   // render() {
-//   //   return (
-//   //     <div>
-//   //       {productComponents}
-//   //     </div>
-//   //   )
-//   // }
+//   render() {
+//       const productComponents = this.state.product.map(product => <Product key={product.id} product={product} />)
+//     return (
+//       <div>
+//         {productComponents}
+//       </div>
+//     )
+//   }
+
+//     //   render() {
+//     //     return (
+//     //     <h1>How are you? {this.state.answer}</h1>
+//     //     )
+//     //   }
+
+// }
+
+// export default App
+
+
+// import React, {Component} from "react"
+
+// class App extends Component {
+  
+//   constructor() {
+//     super()
+//     this.state = {
+//       name: "Gogos",
+//       age: "20"
+//     }
+//   }
 
 //   render() {
-//     return (
-//     <h1>How are you? {this.state.answer}</h1>
+//     return(
+//       <div>
+//         <h1>{this.state.name}</h1>
+//         <h1>{this.state.age} years old</h1>
+//       </div>
 //     )
 //   }
 
@@ -151,27 +179,45 @@
 // export default App
 
 
-import React, {Component} from "react"
+// import React from "react"
 
-class App extends Component {
-  
-  constructor() {
-    super()
-    this.state = {
-      name: "Gogos",
-      age: "20"
+// class App extends React.Component {
+
+//     constructor() {
+//         super()
+//         this.state = {
+//             isloggedIn: true
+//         }
+//     }
+
+//     render() {
+//         return(
+//             <div>
+//                 <h1>You are currently logged? {this.state.isloggedIn ? "in" : "out"}</h1>
+//             </div>
+//         )
+//     }
+// }
+
+// export default App
+
+import React from "react"
+
+function handleClick() {
+    console.log("I was clicked")
+}
+
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <img onMouseOver={() => console.log("Hovered!")} src="https://www.fillmurray.com/200/100"/>
+                <br />
+                <br />
+                <button onClick={handleClick}>Click me</button>
+            </div>
+        )
     }
-  }
-
-  render() {
-    return(
-      <div>
-        <h1>{this.state.name}</h1>
-        <h1>{this.state.age} years old</h1>
-      </div>
-    )
-  }
-
 }
 
 export default App
