@@ -115,42 +115,58 @@
 // export default App
 
 
-// import React from "react"
-// import Product from "./components/Products"
-// import productsData from "./productsData"
+import React from "react"
+import Product from "./components/Products"
+import productsData from "./productsData"
 
 // function productComponents(props) {
   
 // }
 
-// class App extends React.Component {
+class App extends React.Component {
 
-//   constructor() {
-//     super()
-//     this.state = {
-//       //answer: "good"
-//       product: productsData
-//     }
-//   }
+  constructor() {
+    super()
+    this.state = {
+      //answer: "good"
+      product: productsData
+    }   
+    this.handleChange = this.handleChange.bind(this)
+    
+  }
 
-//   render() {
-//       const productComponents = this.state.product.map(product => <Product key={product.id} product={product} />)
-//     return (
-//       <div>
-//         {productComponents}
-//       </div>
-//     )
-//   }
+  handleChange(id) {
+    this.setState(prevState => {
+        const updatedProducts = prevState.product.map(product =>{
+            if(product.id === id) {
+                product.bought = !product.bought
+            }
+            return product
+        })
+        return {
+            product: updatedProducts
+        }
+    })
+  }
 
-//     //   render() {
-//     //     return (
-//     //     <h1>How are you? {this.state.answer}</h1>
-//     //     )
-//     //   }
+  render() {
+      const productComponents = this.state.product.map(product => <Product key={product.id} product={product} handleChange={this.handleChange}/>)
+    return (
+      <div>
+        {productComponents}
+      </div>
+    )
+  }
 
-// }
+    //   render() {
+    //     return (
+    //     <h1>How are you? {this.state.answer}</h1>
+    //     )
+    //   }
 
-// export default App
+}
+
+export default App
 
 
 // import React, {Component} from "react"
@@ -201,23 +217,89 @@
 
 // export default App
 
-import React from "react"
+// import React from "react"
 
-function handleClick() {
-    console.log("I was clicked")
-}
+// function handleClick() {
+//     console.log("I was clicked")
+// }
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <img onMouseOver={() => console.log("Hovered!")} src="https://www.fillmurray.com/200/100"/>
-                <br />
-                <br />
-                <button onClick={handleClick}>Click me</button>
-            </div>
-        )
-    }
-}
+// class App extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <img onMouseOver={() => console.log("Hovered!")} src="https://www.fillmurray.com/200/100"/>
+//                 <br />
+//                 <br />
+//                 <button onClick={handleClick}>Click me</button>
+//             </div>
+//         )
+//     }
+// }
 
-export default App
+// export default App
+
+// import React from "react"
+
+// class App extends React.Component {
+
+//     constructor() {
+//         super()
+//         this.state = {
+//             count: 0
+//         }
+//         this.handleClick = this.handleClick.bind(this)
+//     }
+
+//     handleClick() {
+//         this.setState(prevState => {
+//             return {
+//                 count: prevState.count + 1
+//             }           
+//         })
+//     }
+
+
+//     render() {
+//         return (
+//             <div>
+//                 <h1>{this.state.count}</h1>
+//                 <button onClick={this.handleClick}>Change!</button>
+//             </div>
+//         )
+//     }
+// }
+
+// export default App
+
+
+// import React from "react"
+
+// class App extends React.Component {
+
+//     constructor() {
+//         super()
+//         this.state = {
+//             count: 0
+//         }
+//         this.handleClick = this.handleClick.bind(this)
+//     }
+
+//     handleClick() {
+//         this.setState(prevState => {
+//             return {
+//                 count: prevState.count + 1
+//             }           
+//         })
+//     }
+
+//     render() {
+//         return (
+//             <div>
+//                 <h1>{this.state.count}</h1>
+//                 <button onClick={this.handleClick}>CLick me!</button>
+//             </div>
+//         )
+//     }
+// }
+
+// export default App
