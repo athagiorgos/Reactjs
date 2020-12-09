@@ -119,9 +119,9 @@
 // import Product from "./components/Products"
 // import productsData from "./productsData"
 
-// function productComponents(props) {
+// // function productComponents(props) {
   
-// }
+// // }
 
 // class App extends React.Component {
 
@@ -201,23 +201,24 @@
 
 // export default App
 
-import React from "react"
+// import React from "react"
 
-function handleClick() {
-    console.log("I was clicked")
-}
+// function handleClick() {
+//     console.log("I was clicked")
+// }
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>
-                <img onMouseOver={() => console.log("Hovered!")} src="https://www.fillmurray.com/200/100"/>
-                <br />
-                <br />
-                <button onClick={handleClick}>Click me</button>
-            </div>
-        )
-    }
-}
+// class App extends React.Component {
+//     render() {
+//         return (
+//             <div>
+//                 <img onMouseOver={
+//                     () => console.log("Hovered!")} src="https://www.fillmurray.com/200/100"/>
+//                 <br />
+//                 <br />
+//                 <button onClick={handleClick}>Click me</button>
+//             </div>
+//         )
+//     }
+// }
 
-export default App
+// export default App
